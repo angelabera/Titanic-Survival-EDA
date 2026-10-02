@@ -32,3 +32,29 @@ print(df.isnull().sum())
 print("\n--- Duplicate Rows ---")
 duplicates = df.duplicated().sum()
 print("Number of duplicate rows:", duplicates)
+
+
+print("\n--- Handling Missing Age Values ---")
+median_age = df["Age"].median()
+df["Age"] = df["Age"].fillna(median_age)
+print("Missing Age values after cleaning:", df["Age"].isnull().sum())
+
+
+print("\n--- Handling Missing Embarked Values ---")
+most_common_embarked = df["Embarked"].mode()[0]
+df["Embarked"] = df["Embarked"].fillna(most_common_embarked)
+print("Missing Embarked values after cleaning:",
+      df["Embarked"].isnull().sum())
+
+
+print("\n--- Handling Cabin Values ---")
+df["Cabin_Available"] = df["Cabin"].notna().astype(int)
+print(df[["Cabin", "Cabin_Available"]].head())
+
+
+df.drop("Cabin", axis=1, inplace=True)
+
+
+print("\n--- Overall Survival ---")
+survival_count = df["Survived"].value_counts()
+print(survival_count)
