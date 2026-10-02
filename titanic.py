@@ -58,3 +58,18 @@ df.drop("Cabin", axis=1, inplace=True)
 print("\n--- Overall Survival ---")
 survival_count = df["Survived"].value_counts()
 print(survival_count)
+
+survival_percentage = df["Survived"].mean() * 100
+print("Overall survival rate:", round(survival_percentage, 2), "%")
+
+print("\n--- Survival by Gender ---")
+gender_survival = df.groupby("Sex")["Survived"].mean() * 100
+print(gender_survival)
+
+gender_count = df.groupby("Sex")["Survived"].agg(["count", "sum"])
+print(gender_count)
+
+
+print("\n--- Survival by Gender and Passenger Class ---")
+gender_class = df.groupby(["Sex", "Pclass"])["Survived"].mean() * 100
+print(gender_class)
