@@ -8,7 +8,7 @@ The objective is to understand the structure of the dataset, identify and handle
 
 ## Dataset
 
-The dataset is the `train.csv` file from Kaggle's Titanic: Machine Learning from Disaster competition.
+The dataset is the `titanic-survival-dataset.csv` file from Kaggle's Titanic: Machine Learning from Disaster competition.
 
 It contains information about 891 passengers and 12 attributes, including:
 
@@ -30,8 +30,6 @@ It contains information about 891 passengers and 12 attributes, including:
 - Python
 - Pandas
 - NumPy
-- Matplotlib
-- Seaborn
 
 ## EDA Performed
 
@@ -119,7 +117,7 @@ Survival rates were further analyzed by combining gender and passenger class.
 
 ## How to Run
 
-Clone or download this repository and make sure `train.csv` and `titanic.py` are in the same directory.
+Clone or download this repository and make sure `titanic-survival-dataset.csv` and `titanic.py` are in the same directory.
 
 Run:
 
@@ -134,7 +132,7 @@ The analysis results will be displayed in the terminal.
 ```text
 Titanic-Survival-EDA/
 │
-├── train.csv
+├── titanic-survival-dataset.csv
 ├── titanic.py
 └── README.md
 ```
